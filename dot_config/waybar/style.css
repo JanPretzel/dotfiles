@@ -1,0 +1,102 @@
+@import 'mocha.css';
+
+* {
+  font-family: CascadiaCode Nerd Font;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#waybar {
+  background: transparent;
+  color: @text;
+  margin: 5px 5px;
+}
+
+#workspaces {
+  border-radius: 6px;
+  margin: 5px;
+  background-color: @surface0;
+  margin-left: 1rem;
+  opacity: 0.9;
+}
+
+#workspaces button {
+  color: @lavender;
+  background-color: @surface1;
+  margin: 4px;
+  border-radius: 4px;
+  padding: 0 4px;
+}
+
+#workspaces button.active {
+  color: @mantle;
+  background-color: @rosewater;
+  padding: 0 8px;
+}
+
+#workspaces button.urgent {
+  background-color: @maroon;
+}
+
+#workspaces button:hover {
+  color: @red;
+  background-color: @rosewater;
+}
+
+#custom-updates {
+  border-radius: 6px;
+  color: @mantle;
+  background-color: @peach;
+  opacity: 0.8;
+  margin: 5px;
+  padding: 0 8px;
+}
+
+/* Hide updates module when there are none */
+#custom-updates.hide {
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+#memory,
+#cpu,
+#tray,
+#clock,
+#pulseaudio,
+#idle_inhibitor,
+#custom-arch,
+#custom-lock,
+#custom-power {
+  opacity: 0.8;
+  color: @text;
+  background-color: @surface0;
+  padding: 0.5rem 1rem;
+  margin: 5px 0;
+  margin-right: 0.5rem;
+  border-radius: 4px;
+}
+
+#clock {
+  color: @blue;
+  margin-right: 1rem;
+}
+
+#custom-lock {
+  border-radius: 1rem 0px 0px 1rem;
+  color: @lavender;
+}
+
+#custom-power {
+  margin-right: 0.5rem;
+  border-radius: 4px;
+  /* required to correctly center the icon */
+  padding-left: 10px;
+  color: @red;
+}
+
+#idle_inhibitor.activated {
+  background-color: @red;
+  color: @mantle;
+}
