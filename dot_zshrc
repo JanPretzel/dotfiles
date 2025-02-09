@@ -1,0 +1,67 @@
+# ===== Load Plugins =====
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh-plugins/zsh-z/zsh-z.plugin.zsh
+
+# ===== History =====
+HISTFILE=~/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt incappendhistory
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+setopt hist_ignore_space
+
+# ===== Aliases =====
+
+alias update-zsh-plugins='find ~/.zsh-plugins -maxdepth 1 -mindepth 1 -type d -exec echo "Updating" {} \; -exec git -C {} pull \;'
+
+# Update all packages from all package managers
+alias up='sudo pacman -Syu; yay -Syu; flatpak update; flatpak uninstall --unused; update-zsh-plugins; pkill -SIGRTMIN+8 waybar'
+
+# map list commands to eza
+alias ls='eza -a --icons=always'
+alias ll='eza -al --icons=always'
+alias lt='eza -a --tree --level=1 --icons=always'
+
+# history improvements
+alias history='history 0'
+alias hs='fc -lim "*$@*" 1'
+
+# directory helpers
+setopt auto_cd
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias -g ......='../../../../..'
+
+# ===== kitty keybindings =====
+bindkey '^[[1;3D'   backward-word
+bindkey '^[[1;3C'   forward-word
+bindkey '^[[H'      beginning-of-line
+bindkey '^[[F'      end-of-line
+bindkey '^[[3~'     delete-char
+
+autoload -U up-line-or-beginning-search
+zle -N up-line-or-beginning-search
+bindkey '^[[A' up-line-or-beginning-search
+
+autoload -U down-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '^[[B' down-line-or-beginning-search
+
+
+
+
+# enable case insensitive completion
+autoload -U compinit && compinit
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' menu select
+
+# Should be the last line
+eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/config.omp.json)"
