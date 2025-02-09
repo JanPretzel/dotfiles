@@ -1,0 +1,7 @@
+#
+# ~/.bash_profile
+#
+
+export PATH="/var/lib/flatpak/exports/bin:~/.local/share/flatpak/exports/bin:$PATH"
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
