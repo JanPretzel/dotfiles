@@ -19,6 +19,7 @@ setopt hist_ignore_space
 
 # ===== Aliases =====
 
+alias ks='k9s --kubeconfig ~/.kube/config_home'
 alias update-zsh-plugins='find ~/.zsh-plugins -maxdepth 1 -mindepth 1 -type d -exec echo "Updating" {} \; -exec git -C {} pull \;'
 
 # Update all packages from all package managers
