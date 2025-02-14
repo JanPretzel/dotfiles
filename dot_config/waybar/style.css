@@ -1,7 +1,7 @@
 @import 'mocha.css';
 
 * {
-  font-family: CascadiaCode Nerd Font;
+  font-family: Monaspace Neon;
   font-weight: bold;
   font-size: 14px;
 }
@@ -68,11 +68,12 @@
 #idle_inhibitor,
 #custom-arch,
 #custom-lock,
-#custom-power {
+#custom-power,
+#custom-notification {
   opacity: 0.8;
   color: @text;
   background-color: @surface0;
-  padding: 0.5rem 1rem;
+  padding: 0 1rem;
   margin: 5px 0;
   margin-right: 0.5rem;
   border-radius: 4px;
@@ -88,15 +89,21 @@
   color: @lavender;
 }
 
-#custom-power {
-  margin-right: 0.5rem;
-  border-radius: 4px;
+#custom-power,
+#custom-notification {
   /* required to correctly center the icon */
-  padding-left: 10px;
+  /* padding-left: 11px; */
+}
+
+#custom-power {
   color: @red;
 }
 
 #idle_inhibitor.activated {
   background-color: @red;
   color: @mantle;
+}
+
+.icon {
+  font-size: 30px;
 }

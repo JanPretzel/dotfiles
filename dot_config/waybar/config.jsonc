@@ -18,6 +18,7 @@
     "memory",
     "keyboard-state",
     "tray",
+    "custom/notification",
     "custom/power",
     "clock"
   ],
@@ -42,10 +43,10 @@
     "format": "<span style=\"italic\">{}</span>"
   },
   "idle_inhibitor": {
-    "format": "{icon}",
+    "format": "<span font-size='150%' rise='-2000'>{icon}</span>",
     "format-icons": {
-      "activated": " ",
-      "deactivated": " "
+      "activated": "",
+      "deactivated": ""
     }
   },
   "tray": {
@@ -58,16 +59,16 @@
     "format-alt": "{:%d.%m.%Y}"
   },
   "cpu": {
-    "format": "   {usage}%",
+    "format": "<span font-size='150%' rise='-2000'></span> {usage}%",
     "tooltip": false
   },
   "memory": {
-    "format": "   {}%",
+    "format": "  {}%",
     "tooltip": false
   },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
-    "format": "{volume}%  {icon} {format_source}",
+    "format": "{volume}% <span font-size='150%' rise='-2000'>{icon}</span>",
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": " {format_source}",
@@ -92,7 +93,7 @@
     // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
   },
   "custom/power": {
-    "format": "",
+    "format": "<span font-size='140%' rise='-2000'></span>",
     "tooltip": false,
     "menu": "on-click",
     "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
@@ -103,8 +104,28 @@
       "hibernate": "systemctl hibernate"
     }
   },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "<span font-size='140%' rise='-2000'>{icon}</span>",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
   "custom/updates": {
-    "format": "  {}",
+    "format": "<span font-size='150%' rise='-2000'></span> {}",
     "escape": true,
     "return-type": "json",
     "exec": "~/.config/waybar/scripts/check-for-updates.sh",
