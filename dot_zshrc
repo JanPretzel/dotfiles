@@ -33,7 +33,8 @@ alias lt='eza -a --tree --level=1 --icons=always'
 
 # history improvements
 alias history='history 0'
-alias hs='fc -lim "*$@*" 1'
+histsearch() { fc -lim "*$@*" 1 }
+alias hs='histsearch'
 
 # directory helpers
 setopt auto_cd
