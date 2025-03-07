@@ -23,8 +23,16 @@ alias dot='chezmoi'
 alias ks='k9s --kubeconfig ~/.kube/config_home'
 alias update-zsh-plugins='find ~/.zsh-plugins -maxdepth 1 -mindepth 1 -type d -exec echo "Updating" {} \; -exec git -C {} pull \;'
 
+alias drop-caches='sudo paccache -rk3; yay -Sc --aur --noconfirm'
+alias update-mirrors='rate-mirrors --allow-root --protocol https --entry-country DE --country-neighbors-per-country=0 --country-test-mirrors-per-country=5 --max-jumps=2 arch --fetch-first-tier-only --max-delay=21600 | grep -v '^#' | sudo tee /etc/pacman.d/mirrorlist'
+
 # Update all packages from all package managers
-alias up='sudo pacman -Syu; yay -Syu; flatpak update; flatpak uninstall --unused; update-zsh-plugins; pkill -SIGRTMIN+8 waybar'
+alias up='update-mirrors; \
+  drop-caches; \
+  sudo pacman -Syyu; \
+  yay -Syyu; flatpak update; \
+  flatpak uninstall --unused; \
+  update-zsh-plugins; pkill -SIGRTMIN+8 waybar'
 
 # map list commands to eza
 alias ls='eza -a --icons=always'
