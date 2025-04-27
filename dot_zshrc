@@ -66,6 +66,8 @@ autoload -U down-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey '^[[B' down-line-or-beginning-search
 
+# ===== environment variables =====
+export KUBECONFIG=~/.kube/config_home
 
 
 
