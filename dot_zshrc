@@ -68,6 +68,7 @@ bindkey '^[[B' down-line-or-beginning-search
 
 # ===== environment variables =====
 export KUBECONFIG=~/.kube/config_home
+export npm_config_prefix="$HOME/.local"
 
 
 
