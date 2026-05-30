@@ -20,7 +20,7 @@
     "tray",
     "custom/notification",
     "custom/power",
-    "clock"
+    "clock",
   ],
   // Modules configuration
   // "hyprland/workspaces": {
@@ -40,31 +40,31 @@
   //     }
   // },
   "hyprland/submap": {
-    "format": "<span style=\"italic\">{}</span>"
+    "format": "<span style=\"italic\">{}</span>",
   },
   "idle_inhibitor": {
     "format": "<span font-size='150%' rise='-2000'>{icon}</span>",
     "format-icons": {
       "activated": "",
-      "deactivated": ""
-    }
+      "deactivated": "",
+    },
   },
   "tray": {
     // "icon-size": 21,
-    "spacing": 10
+    "spacing": 10,
   },
   "clock": {
     "format": "{:%a %H:%M}",
     "tooltip": false,
-    "format-alt": "{:%d.%m.%Y}"
+    "format-alt": "{:%d.%m.%Y}",
   },
   "cpu": {
     "format": "<span font-size='150%' rise='-2000'></span> {usage}%",
-    "tooltip": false
+    "tooltip": false,
   },
   "memory": {
     "format": "  {}%",
-    "tooltip": false
+    "tooltip": false,
   },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
@@ -76,9 +76,9 @@
     "format-source": "",
     "format-source-muted": "",
     "format-icons": {
-      "default": ["", "", ""]
+      "default": ["", "", ""],
     },
-    "on-click": "pavucontrol"
+    "on-click": "pavucontrol",
   },
   "custom/media": {
     "format": "{icon} {}",
@@ -86,10 +86,10 @@
     "max-length": 40,
     "format-icons": {
       "spotify": "",
-      "default": "🎜"
+      "default": "🎜",
     },
     "escape": true,
-    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources folder
     // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
   },
   "custom/power": {
@@ -101,8 +101,8 @@
       "shutdown": "shutdown",
       "reboot": "reboot",
       "suspend": "systemctl suspend",
-      "hibernate": "systemctl hibernate"
-    }
+      "hibernate": "systemctl hibernate",
+    },
   },
   "custom/notification": {
     "tooltip": false,
@@ -115,14 +115,14 @@
       "inhibited-notification": "<span foreground='red'><sup></sup></span>",
       "inhibited-none": "",
       "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": ""
+      "dnd-inhibited-none": "",
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
     "exec": "swaync-client -swb",
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
-    "escape": true
+    "escape": true,
   },
   "custom/updates": {
     "format": "<span font-size='150%' rise='-2000'></span> {}",
@@ -130,6 +130,6 @@
     "return-type": "json",
     "exec": "~/.config/waybar/scripts/check-for-updates.sh",
     "interval": 3600, // every hour
-    "signal": 8
-  }
+    "signal": 8,
+  },
 }
