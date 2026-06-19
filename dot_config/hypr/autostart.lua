@@ -2,6 +2,8 @@
 
 hl.on("hyprland.start", function()
   hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
+  hl.exec_cmd("/usr/lib/xdg-desktop-portal")
+  hl.exec_cmd("/usr/lib/xdg-desktop-portal-hyprland")
   hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
   hl.exec_cmd("hypridle")
   hl.exec_cmd("waybar & hyprpaper")
