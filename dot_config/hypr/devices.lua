@@ -5,3 +5,9 @@ hl.device({
   sensitivity   = -0.5,
   accel_profile = "flat"
 })
+
+hl.device({
+  name          = "razer-razer-viper-v4-pro",
+  sensitivity   = -0.5,
+  accel_profile = "flat"
+})
