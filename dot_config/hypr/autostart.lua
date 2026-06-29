@@ -14,6 +14,5 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("1password --silent")
   hl.exec_cmd(
     "dbus-update-activation-environment --systemd DISPLAY XAUTHORITY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=Hyprland")
-  hl.exec_cmd("solaar -w hide")
   hl.exec_cmd("flameshot")
 end)
