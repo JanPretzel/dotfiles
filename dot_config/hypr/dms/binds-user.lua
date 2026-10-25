@@ -1,0 +1,11 @@
+-- DMS user keybind overrides (edit via Control Center or dms; do not remove this header)
+
+hl.unbind("SUPER + D")
+hl.bind("SUPER + D", hl.dsp.exec_cmd("dms ipc call spotlight toggle"), { description = "dms ipc call spotlight toggle" })
+hl.unbind("SUPER + Return")
+hl.bind("SUPER + Return", hl.dsp.exec_cmd("ghostty"), { description = "ghostty" })
+hl.unbind("SUPER + Q")
+hl.unbind("SUPER + T")
+hl.unbind("SUPER + space")
+hl.unbind("SUPER + SHIFT + Q")
+hl.bind("SUPER + SHIFT + Q", hl.dsp.window.close(), { description = "Close window" })

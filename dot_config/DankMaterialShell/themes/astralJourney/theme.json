@@ -1,0 +1,316 @@
+{
+  "id": "astralJourney",
+  "name": "Astral Journey",
+  "version": "1.1.1",
+  "author": "kmf",
+  "description": "warm star-glow falling into deep space — deep-space backgrounds with luminous star-glow accents",
+  "dark": {
+    "surfaceText": "#ebe8d2",
+    "surfaceVariantText": "#fdfbe4",
+    "backgroundText": "#ebe8d2",
+    "outline": "#8b90bd",
+    "error": "#ff6e6e",
+    "warning": "#ff9933",
+    "info": "#6a97ea"
+  },
+  "light": {
+    "surfaceText": "#292140",
+    "surfaceVariantText": "#1c1730",
+    "backgroundText": "#292140",
+    "outline": "#5d5c78",
+    "error": "#cf293a",
+    "warning": "#af5208",
+    "info": "#2f5fc7"
+  },
+  "variants": {
+    "type": "multi",
+    "defaults": {
+      "dark": {
+        "accent": "amber",
+        "flavor": "blackhole"
+      },
+      "light": {
+        "accent": "amber",
+        "flavor": "supernova"
+      }
+    },
+    "flavors": [
+      {
+        "id": "blackhole",
+        "name": "Blackhole",
+        "dark": {
+          "surface": "#14172a",
+          "surfaceVariant": "#1c2038",
+          "background": "#0d0f1e",
+          "surfaceContainer": "#14172a",
+          "surfaceContainerHigh": "#1c2038",
+          "surfaceContainerHighest": "#2a2f4d"
+        },
+        "light": {}
+      },
+      {
+        "id": "supernova",
+        "name": "Supernova",
+        "dark": {},
+        "light": {
+          "surface": "#f6f0dc",
+          "surfaceVariant": "#efe8cf",
+          "background": "#fdf9ec",
+          "surfaceContainer": "#f6f0dc",
+          "surfaceContainerHigh": "#efe8cf",
+          "surfaceContainerHighest": "#e2d8ba"
+        }
+      }
+    ],
+    "accents": [
+      {
+        "blackhole": {
+          "primary": "#ffcc66",
+          "primaryText": "#0d0f1e",
+          "primaryContainer": "#5a4b35",
+          "secondary": "#38a8d0",
+          "surfaceTint": "#2f2928"
+        },
+        "id": "amber",
+        "name": "Amber",
+        "supernova": {
+          "primary": "#97610c",
+          "primaryText": "#fdf9ec",
+          "primaryContainer": "#f4e4c4",
+          "secondary": "#006699",
+          "surfaceTint": "#f4e4c4"
+        }
+      },
+      {
+        "blackhole": {
+          "primary": "#ff9933",
+          "primaryText": "#0d0f1e",
+          "primaryContainer": "#5a3b25",
+          "secondary": "#6a97ea",
+          "surfaceTint": "#2f2221"
+        },
+        "id": "orange",
+        "name": "Orange",
+        "supernova": {
+          "primary": "#af5208",
+          "primaryText": "#fdf9ec",
+          "primaryContainer": "#f7dfc3",
+          "secondary": "#2f5fc7",
+          "surfaceTint": "#f7dfc3"
+        }
+      },
+      {
+        "blackhole": {
+          "primary": "#ff6e6e",
+          "primaryText": "#0d0f1e",
+          "primaryContainer": "#5a2d38",
+          "secondary": "#7ed4a3",
+          "surfaceTint": "#2f1c29"
+        },
+        "id": "coral",
+        "name": "Coral",
+        "supernova": {
+          "primary": "#cf293a",
+          "primaryText": "#fdf9ec",
+          "primaryContainer": "#f6d7cf",
+          "secondary": "#1c7b52",
+          "surfaceTint": "#f6d7cf"
+        }
+      },
+      {
+        "blackhole": {
+          "primary": "#cc99cc",
+          "primaryText": "#0d0f1e",
+          "primaryContainer": "#4a3b56",
+          "secondary": "#38a8d0",
+          "surfaceTint": "#282236"
+        },
+        "id": "lilac",
+        "name": "Lilac",
+        "supernova": {
+          "primary": "#9e4da3",
+          "primaryText": "#fdf9ec",
+          "primaryContainer": "#eddae0",
+          "secondary": "#006699",
+          "surfaceTint": "#eddae0"
+        }
+      },
+      {
+        "blackhole": {
+          "primary": "#b78ae0",
+          "primaryText": "#0d0f1e",
+          "primaryContainer": "#43365c",
+          "secondary": "#ffcc66",
+          "surfaceTint": "#252039"
+        },
+        "id": "violet",
+        "name": "Violet",
+        "supernova": {
+          "primary": "#7b4fc0",
+          "primaryText": "#fdf9ec",
+          "primaryContainer": "#e6dae4",
+          "secondary": "#97610c",
+          "surfaceTint": "#e6dae4"
+        }
+      },
+      {
+        "blackhole": {
+          "primary": "#6a97ea",
+          "primaryText": "#0d0f1e",
+          "primaryContainer": "#2b3b5f",
+          "secondary": "#ff9933",
+          "surfaceTint": "#1a223b"
+        },
+        "id": "azure",
+        "name": "Azure",
+        "supernova": {
+          "primary": "#2f5fc7",
+          "primaryText": "#fdf9ec",
+          "primaryContainer": "#d8dde5",
+          "secondary": "#af5208",
+          "surfaceTint": "#d8dde5"
+        }
+      },
+      {
+        "blackhole": {
+          "primary": "#38a8d0",
+          "primaryText": "#0d0f1e",
+          "primaryContainer": "#1b4057",
+          "secondary": "#ff9933",
+          "surfaceTint": "#132437"
+        },
+        "id": "teal",
+        "name": "Teal",
+        "supernova": {
+          "primary": "#006699",
+          "primaryText": "#fdf9ec",
+          "primaryContainer": "#cfdfdd",
+          "secondary": "#af5208",
+          "surfaceTint": "#cfdfdd"
+        }
+      },
+      {
+        "blackhole": {
+          "primary": "#7ed4a3",
+          "primaryText": "#0d0f1e",
+          "primaryContainer": "#314e49",
+          "secondary": "#b78ae0",
+          "surfaceTint": "#1d2b31"
+        },
+        "id": "aurora",
+        "name": "Aurora",
+        "supernova": {
+          "primary": "#1c7b52",
+          "primaryText": "#fdf9ec",
+          "primaryContainer": "#d5e5d2",
+          "secondary": "#7b4fc0",
+          "surfaceTint": "#d5e5d2"
+        }
+      }
+    ]
+  },
+  "wcag": {
+    "level": "AA",
+    "dark": {
+      "level": "AAA",
+      "minRatio": 10.55,
+      "worstPair": [
+        "surfaceText",
+        "surfaceContainerHighest"
+      ],
+      "body": {
+        "level": "AAA",
+        "minRatio": 10.55,
+        "worstPair": [
+          "surfaceText",
+          "surfaceContainerHighest"
+        ]
+      },
+      "accent": {
+        "level": "AAA",
+        "minRatio": 11.88,
+        "worstPair": [
+          "primary",
+          "surfaceContainer"
+        ]
+      },
+      "nonText": {
+        "level": "AA",
+        "minRatio": 6.1,
+        "worstPair": [
+          "info",
+          "surfaceContainer"
+        ]
+      },
+      "variants": {
+        "blackhole-amber": "AAA",
+        "blackhole-aurora": "AAA",
+        "blackhole-azure": "AA",
+        "blackhole-coral": "AA",
+        "blackhole-lilac": "AAA",
+        "blackhole-orange": "AAA",
+        "blackhole-teal": "AA",
+        "blackhole-violet": "AA"
+      },
+      "breakdown": [
+        {
+          "name": "Blackhole",
+          "mode": "dark",
+          "level": "AA",
+          "bodyLevel": "AAA"
+        }
+      ]
+    },
+    "light": {
+      "level": "AA",
+      "minRatio": 4.57,
+      "worstPair": [
+        "primary",
+        "surfaceContainer"
+      ],
+      "body": {
+        "level": "AAA",
+        "minRatio": 10.65,
+        "worstPair": [
+          "surfaceText",
+          "surfaceContainerHighest"
+        ]
+      },
+      "accent": {
+        "level": "AA",
+        "minRatio": 4.57,
+        "worstPair": [
+          "primary",
+          "surfaceContainer"
+        ]
+      },
+      "nonText": {
+        "level": "AA",
+        "minRatio": 4.57,
+        "worstPair": [
+          "warning",
+          "surfaceContainer"
+        ]
+      },
+      "variants": {
+        "supernova-amber": "AA",
+        "supernova-aurora": "AA",
+        "supernova-azure": "AA",
+        "supernova-coral": "AA",
+        "supernova-lilac": "AA",
+        "supernova-orange": "AA",
+        "supernova-teal": "AA",
+        "supernova-violet": "AA"
+      },
+      "breakdown": [
+        {
+          "name": "Supernova",
+          "mode": "light",
+          "level": "AA",
+          "bodyLevel": "AAA"
+        }
+      ]
+    }
+  },
+  "sourceDir": "astral-journey"
+}
