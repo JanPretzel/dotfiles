@@ -1,7 +1,12 @@
 # ===== Load Plugins =====
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh-plugins/zsh-z/zsh-z.plugin.zsh
+# Arch paths; skipped where they don't exist (NixOS loads these from /etc/zshrc).
+for plugin in \
+  /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh \
+  /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh \
+  ~/.zsh-plugins/zsh-z/zsh-z.plugin.zsh; do
+  [[ -r $plugin ]] && source $plugin
+done
+unset plugin
 
 # ===== History =====
 HISTFILE=~/.zsh_history
@@ -33,7 +38,7 @@ alias up='update-mirrors; \
   sudo pacman -Syyu; \
   yay -Syyu; flatpak update; \
   flatpak uninstall --unused; \
-  update-zsh-plugins; pkill -SIGRTMIN+8 waybar'
+  update-zsh-plugins'
 
 # map list commands to eza
 alias ls='eza -a --icons=always'
