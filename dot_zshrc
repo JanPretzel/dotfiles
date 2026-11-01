@@ -45,6 +45,9 @@ alias ls='eza -a --icons=always'
 alias ll='eza -al --icons=always'
 alias lt='eza -a --tree --level=1 --icons=always'
 
+# map cat to bat
+alias cat='bat --paging=never'
+
 # history improvements
 alias history='history 0'
 histsearch() { fc -lim "*$@*" 1 }
