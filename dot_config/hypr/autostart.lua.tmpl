@@ -1,5 +1,12 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Autostart/
 
+-- Start a tray app only once a tray host (Dux, Waybar, ...) is on the session
+-- bus, or after 30 s at the latest. Apps started before it exists never show
+-- a tray icon.
+local function exec_after_tray(cmd)
+  hl.exec_cmd("timeout 30 sh -c 'until busctl --user status org.kde.StatusNotifierWatcher >/dev/null 2>&1; do sleep 0.5; done'; exec " .. cmd)
+end
+
 hl.on("hyprland.start", function()
   hl.exec_cmd(
     "dbus-update-activation-environment --systemd DISPLAY XAUTHORITY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=Hyprland")
@@ -14,9 +21,9 @@ hl.on("hyprland.start", function()
 {{- end }}
   -- hl.exec_cmd("waybar & hyprpaper")
   -- hl.exec_cmd("nm-applet")
-  hl.exec_cmd("protonvpn-app --start-minimized")
-  hl.exec_cmd("signal-desktop --start-in-tray")
+  exec_after_tray("protonvpn-app --start-minimized")
+  exec_after_tray("signal-desktop --start-in-tray")
   -- hl.exec_cmd("openrgb --startminimized --profile \"orange\" --server")
-  hl.exec_cmd("1password --silent")
-  hl.exec_cmd("flameshot")
+  exec_after_tray("1password --silent")
+  exec_after_tray("flameshot")
 end)
