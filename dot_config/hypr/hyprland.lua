@@ -78,6 +78,11 @@ hl.window_rule({
 	float = true,
 })
 hl.window_rule({ match = { class = "^(zoom)$" }, float = true })
+-- Controller input doesn't count as Wayland activity, so keep DMS from locking
+-- while a game is focused (Proton games: steam_app_*, plus gamescope),
+-- and while anything is fullscreen (native games, videos).
+hl.window_rule({ match = { class = "^(steam_app_.*|gamescope)$" }, idle_inhibit = "focus" })
+hl.window_rule({ match = { class = ".*" }, idle_inhibit = "fullscreen" })
 hl.layer_rule({ match = { namespace = "^(quickshell)$" }, no_anim = true })
 hl.layer_rule({ match = { namespace = "^dms:.*" }, no_anim = true })
 
